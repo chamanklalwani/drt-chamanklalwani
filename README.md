@@ -39,3 +39,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Used Bootstrap, FontAwesome fonts.
 - Implemented mock methods in data.service for CREATE/UPDATE/DELETE courses operations.
 - Implemented the structure of Pagination service.
+
+
+
+Here are the screenshots:
+
+<img width="500" src="src/assets/images/screenshots/grid-view.png" border="0" />
+
+<br /><br />
+
+<img width="500" src="src/assets/images/screenshots/list-view.png" border="0" />
