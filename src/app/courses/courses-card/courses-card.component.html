@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row card-container">
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let course of courses;trackBy:trackbyService.course">
+      <div class="card">
+        <div class="card-header">
+          <a [routerLink]="['/courses',course.id,'details']" class="white">
+            {{course.title | capitalize }}
+          </a>
+          <a [routerLink]="['/courses',course.id,'edit']">
+            <i title="Edit" class="pull-right glyphicon glyphicon-edit edit-icon white"></i>
+          </a>
+        </div>
+        <div class="card-body">
+          <div class="clearfix">
+            <div class="card-body-left">
+              <img src="assets/images/male.png" class="card-image" />
+            </div>
+            <div class="mt-1">
+              <div class="card-body-content">
+                <div>{{ course.description }}</div>
+                <div>
+                  <span class="font-weight-bold">Duration: </span>
+                  {{ course.duration }} {{ course['duration-unit'] }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!courses.length">
+      No Records Found
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="courses view indent">
+  <div class="container">
+    <header>
+      <h3>
+        <fa-icon [icon]="['fas', 'book-open']"></fa-icon>
+        {{ title }}
+      </h3>
+    </header>
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="navbar">
+          <ul class="nav navbar-nav">
+            <li class="toolbar-item">
+              <a (click)="changeDisplayMode(displayModeEnum.Card)"
+                [class.active]="displayMode === displayModeEnum.Card">
+                <fa-icon [icon]="['fas', 'th']"></fa-icon> Card View
+              </a>
+            </li>
+            <li class="toolbar-item">
+              <a (click)="changeDisplayMode(displayModeEnum.Grid)"
+                [class.active]="displayMode === displayModeEnum.Grid">
+                <fa-icon [icon]="['fas', 'list']"></fa-icon> List View
+              </a>
+            </li>
+          </ul>
+          <app-filter-textbox class="navbar-right" (changed)="filterChanged($event)">
+          </app-filter-textbox>
+        </div>
+      </div>
+    </div>
+
+    <app-courses-card [courses]="filteredCourses" [hidden]="displayMode !== displayModeEnum.Card">
+    </app-courses-card>
+
+    <app-courses-grid [courses]="filteredCourses" [hidden]="displayMode !== displayModeEnum.Grid">
+    </app-courses-grid>
+
+  </div>
+</div>
