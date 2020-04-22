@@ -2,12 +2,13 @@
   <div class="row card-container">
     <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let course of courses;trackBy:trackbyService.course">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between">
           <a [routerLink]="['/courses',course.id,'details']" class="white">
             {{course.title | capitalize }}
           </a>
-          <a [routerLink]="['/courses',course.id,'edit']">
-            <i title="Edit" class="pull-right glyphicon glyphicon-edit edit-icon white"></i>
+          <a [routerLink]="['/courses',course.id,'details']">
+            <fa-icon title="Edit" class="white" [icon]="['fas', 'edit']"></fa-icon>
+            <!-- <i title="Edit" class="pull-right glyphicon glyphicon-edit edit-icon white"></i> -->
           </a>
         </div>
         <div class="card-body">

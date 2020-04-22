@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { DataService } from './data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpTestingController } from '@angular/common/http/testing'
-import { ICourses } from 'src/app/shared/interfaces';
+import { ICourse } from 'src/app/shared/interfaces';
 
 describe('DataService', () => {
     let service: DataService;
@@ -17,7 +17,7 @@ describe('DataService', () => {
     });
 
     it('be able to retrieve courses from the API bia GET', () => {
-        const dummyCourses: ICourses[] = [
+        const dummyCourses: ICourse[] = [
             {
                 "id": 1,
                 "title": "Modern Web Development",

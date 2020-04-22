@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { CustomersRoutingModule } from './courses-routing.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faTh, faList, faBookOpen, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faTh, faList, faBookOpen, faBook, faPlus, faEdit, faBars } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   imports: [CustomersRoutingModule, SharedModule, FontAwesomeModule],
@@ -11,6 +11,6 @@ import { faTh, faList, faBookOpen, faBook } from '@fortawesome/free-solid-svg-ic
 })
 export class CoursesModule {
   constructor(private library: FaIconLibrary) {
-    library.addIcons(faTh, faList, faBookOpen, faBook);
+    library.addIcons(faTh, faList, faBookOpen, faBook, faPlus, faEdit, faBars);
   }
 }

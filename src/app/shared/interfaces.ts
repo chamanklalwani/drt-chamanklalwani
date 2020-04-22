@@ -1,5 +1,5 @@
 // Interface for Courses
-export interface ICourses {
+export interface ICourse {
     id: number;
     title: string;
     duration: number;

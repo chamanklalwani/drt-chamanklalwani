@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
-import { ICourses } from '../../shared/interfaces';
+import { ICourse } from '../../shared/interfaces';
 
 @Injectable()
 export class TrackByService {
 
-  course(index: number, course: ICourses) {
+  course(index: number, course: ICourse) {
     return course.id;
   }
 }

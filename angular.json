@@ -20,7 +20,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets", "src/assets/images"],
-            "styles": ["src/styles.scss", "src/assets/styles.css"],
+            "styles": ["src/styles.scss", "src/assets/styles.scss"],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js"
@@ -79,7 +79,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss", "src/assets/styles.css"],
+            "styles": ["src/styles.scss", "src/assets/styles.scss"],
             "scripts": []
           }
         },
@@ -113,7 +113,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "css"
+      "styleext": "scss"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

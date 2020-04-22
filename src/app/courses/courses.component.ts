@@ -3,7 +3,7 @@ import {
   ViewContainerRef, ComponentFactoryResolver, ComponentRef
 } from '@angular/core';
 import { DataService } from '../core/services/data.service';
-import { ICourses, IPagedResults } from '../shared/interfaces';
+import { ICourse, IPagedResults } from '../shared/interfaces';
 import { FilterService } from '../core/services/filter.service';
 import { LoggerService } from '../core/services/logger.service';
 import { Observable } from 'rxjs';
@@ -16,23 +16,23 @@ import { Observable } from 'rxjs';
 export class CoursesComponent implements OnInit {
   title: string;
   filterText: string;
-  courses: ICourses[] = [];
+  courses: ICourse[] = [];
   displayMode: DisplayModeEnum;
   displayModeEnum = DisplayModeEnum;
   totalRecords = 0;
   pageSize = 10;
   mapComponentRef: ComponentRef<any>;
-  _filteredCourses: ICourses[] = [];
+  _filteredCourses: ICourse[] = [];
 
   get filteredCourses() {
     return this._filteredCourses;
   }
 
-  set filteredCourses(value: ICourses[]) {
+  set filteredCourses(value: ICourse[]) {
     this._filteredCourses = value;
   }
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,
+  constructor(
     private dataService: DataService,
     private filterService: FilterService,
     private logger: LoggerService) { }
@@ -55,7 +55,7 @@ export class CoursesComponent implements OnInit {
 
   getCourses() {
     this.dataService.getCourses()
-      .subscribe((response: ICourses[]) => {
+      .subscribe((response: ICourse[]) => {
         this.courses = this.filteredCourses = response;
         this.totalRecords = this.courses.length;
       },
@@ -67,21 +67,21 @@ export class CoursesComponent implements OnInit {
     if (data && this.courses) {
       data = data.toUpperCase();
       const props = ['title', 'duration', 'description'];
-      this.filteredCourses = this.filterService.filter<ICourses>(this.courses, data, props);
+      this.filteredCourses = this.filterService.filter<ICourse>(this.courses, data, props);
     } else {
       this.filteredCourses = this.courses;
     }
   }
 
-  /* getCoursesPage(page: number) {
+  getCoursesPage(page: number) {
     this.dataService.getCoursesPage((page - 1) * this.pageSize, this.pageSize)
-      .subscribe((response: IPagedResults<ICourses[]>) => {
+      .subscribe((response: IPagedResults<ICourse[]>) => {
         this.courses = this.filteredCourses = response.results;
         this.totalRecords = response.totalRecords;
       },
         (err: any) => this.logger.log(err),
         () => this.logger.log('getCoursesPage() retrieved courses for page: ' + page));
-  } */
+  }
 }
 
 enum DisplayModeEnum {

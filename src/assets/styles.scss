@@ -1,10 +1,8 @@
+@import 'styles-variables';
+
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-}
-
-body {
-  font-family: 'Open Sans'
 }
 
 main {
@@ -48,7 +46,7 @@ th {
 }
 
 .navbar {
-  min-height: 60px;
+  min-height: 100px;
 }
 
 .navbar-nav {
@@ -120,7 +118,7 @@ a.navbar-brand {
 .navbar .nav>li>a {
   color: white;
   font-weight: bold;
-  height: 30px;
+  /* height: 30px; */
   display: block;
   padding: 10px 15px;
 }
@@ -157,7 +155,7 @@ footer {
 }
 
 form {
-  width: 50%;
+  /* width: 50%; */
 }
 
 

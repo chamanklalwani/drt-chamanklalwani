@@ -10,10 +10,8 @@ const redirectUnauthorizedToLanding = redirectUnauthorizedTo(['login']);
 const routes: Routes = [
   { path: "", redirectTo: "/welcome", pathMatch: "full" },
   { path: "welcome", component: WelcomeComponent },
-
-  {
-    path: "about", component: AboutComponent
-  },
+  {path: "about", component: AboutComponent },
+  { path: 'courses/:id', data: { preload: true }, loadChildren: () => import('./course/course.module').then(m => m.CourseModule) },
   { path: 'courses', loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule) },
 
 

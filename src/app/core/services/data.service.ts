@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { ICourses, IPagedResults, IApiResponse } from '../../shared/interfaces';
+import { ICourse, IPagedResults, IApiResponse } from '../../shared/interfaces';
 
 @Injectable()
 export class DataService {
@@ -15,14 +15,14 @@ export class DataService {
     constructor(private http: HttpClient, @Inject('Window') private window: Window) {
     }
 
-    getCoursesPage(page: number, pageSize: number): Observable<IPagedResults<ICourses[]>> {
-        return this.http.get<ICourses[]>(
+    getCoursesPage(page: number, pageSize: number): Observable<IPagedResults<ICourse[]>> {
+        return this.http.get<ICourse[]>(
             `${this.coursesBaseUrl}/page/${page}/${pageSize}`,
             { observe: 'response' })
             .pipe(
                 map(res => {
                     const totalRecords = +res.headers.get('X-InlineCount');
-                    const courses = res.body as ICourses[];
+                    const courses = res.body as ICourse[];
                     return {
                         results: courses,
                         totalRecords: totalRecords
@@ -35,8 +35,8 @@ export class DataService {
     /**
      * returns list of all courses
      */
-    getCourses(): Observable<ICourses[]> {
-        return this.http.get<ICourses[]>(this.coursesBaseUrl)
+    getCourses(): Observable<ICourse[]> {
+        return this.http.get<ICourse[]>(this.coursesBaseUrl)
             .pipe(
                 map(courses => {
                     return courses;
@@ -49,8 +49,8 @@ export class DataService {
      * returns details of specific course
      * @param id course id to fetch details for
      */
-    getCourse(id: number): Observable<ICourses> {
-        return this.http.get<ICourses>(this.coursesBaseUrl + '/' + id)
+    getCourse(id: number): Observable<ICourse> {
+        return this.http.get<ICourse>(this.coursesBaseUrl + '/' + id)
             .pipe(
                 map(course => {
                     return course;
@@ -63,8 +63,8 @@ export class DataService {
      * Add course object to the courses collection
      * @param course course object to add
      */
-    addCourse(course: ICourses): Observable<ICourses> {
-        return this.http.post<ICourses>(this.coursesBaseUrl, course)
+    addCourse(course: ICourse): Observable<ICourse> {
+        return this.http.post<ICourse>(this.coursesBaseUrl, course)
             .pipe(catchError(this.handleError));
     }
 
@@ -72,7 +72,7 @@ export class DataService {
      * updates specified course object
      * @param course updated course object
      */
-    updateCourse(course: ICourses): Observable<boolean> {
+    updateCourse(course: ICourse): Observable<boolean> {
         return this.http.put<IApiResponse>(this.coursesBaseUrl + '/' + course.id, course)
             .pipe(
                 map(res => res.status),

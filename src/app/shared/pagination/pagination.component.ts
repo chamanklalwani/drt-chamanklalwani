@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'cm-pagination',
+  selector: 'app-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: [ './pagination.component.css' ]
 })

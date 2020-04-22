@@ -49,3 +49,20 @@ Here are the screenshots:
 <br /><br />
 
 <img width="500" src="src/assets/images/screenshots/list-view.png" border="0" />
+
+<br /><br />
+
+<img width="500" src="src/assets/images/screenshots/course-detail.png" border="0" />
+
+<br /><br />
+
+<img width="500" src="src/assets/images/screenshots/new-course.png" border="0" />
+
+
+<br /><br />
+
+<img width="500" src="src/assets/images/screenshots/delete-course.png" border="0" />
+
+<br /><br />
+
+<img width="500" src="src/assets/images/screenshots/can-deactivate-guard.png" border="0" />

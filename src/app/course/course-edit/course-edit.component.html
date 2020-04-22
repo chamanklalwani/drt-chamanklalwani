@@ -1,0 +1,34 @@
+<div>
+    <form (ngSubmit)="submit()" #courseForm="ngForm" class="course-form w-50" novalidate>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="course.title" #title="ngModel" required>
+        <div class="alert alert-danger" [hidden]="title.pristine || title.valid">Title is required</div>
+      </div>
+      <div class="form-group">
+        <label>Duration</label>
+        <input type="number" class="form-control" name="duration" [(ngModel)]="course.duration" #duration="ngModel" required>
+        <div class="alert alert-danger" [hidden]="duration.pristine || duration.valid">Duration is required</div>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" name="description" [(ngModel)]="course.description" #description="ngModel" required>
+        <div class="alert alert-danger" [hidden]="description.pristine || description.valid">Description is required</div>
+      </div>
+      <div *ngIf="course" class="d-flex justify-content-between">
+        <div class="alert alert-warning w-100" *ngIf="course.id && deleteMessageEnabled">
+           Are you sure you want to Delete this course?
+           <button class="btn btn-danger ml-3" (click)="delete($event)">Yes</button>
+           <button class="btn btn-light ml-3" (click)="deleteMessageEnabled = false">No</button>
+        </div>
+        <button class="btn btn-danger" *ngIf="course.id && !deleteMessageEnabled" (click)="deleteMessageEnabled = true">Delete</button>&nbsp;&nbsp;
+  
+        <div class="pull-right" *ngIf="!deleteMessageEnabled">
+          <button class="btn btn-light" (click)="cancel($event)">Cancel</button>
+          <button type="submit" class="btn btn-success ml-3" [disabled]="courseForm.pristine || !courseForm.valid">{{ operationText }}</button>
+        </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="errorMessage != null">{{ errorMessage }}</div>
+    </form>
+    <br />
+  </div>

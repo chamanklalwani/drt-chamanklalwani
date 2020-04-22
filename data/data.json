@@ -1,6 +1,5 @@
 {
   "links": [],
-
   "courses": [
     {
       "id": 1,
@@ -36,6 +35,34 @@
       "duration": 5,
       "duration-unit": "day",
       "description": "Intro to Node.js"
+    },
+    {
+      "id": 6,
+      "title": "C++",
+      "duration": "35",
+      "duration-unit": "day",
+      "description": "Intro to C++"
+    },
+    {
+      "id": 7,
+      "title": "DataBase",
+      "duration": 60,
+      "duration-unit": "day",
+      "description": "Database for beginners "
+    },
+    {
+      "id": 9,
+      "title": "Discrete Mathematics",
+      "duration": 90,
+      "duration-unit": "day",
+      "description": "Basic of discrete logics"
+    },
+    {
+      "id": 10,
+      "title": "Introduction to GO",
+      "duration": 80,
+      "duration-unit": "day",
+      "description": "Basic course for GO language"
     }
   ]
 }

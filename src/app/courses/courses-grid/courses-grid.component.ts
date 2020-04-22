@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core
 
 import { SorterService } from '../../core/services/sorter.service';
 import { TrackByService } from '../../core/services/trackby.service';
-import { ICourses } from '../../shared/interfaces';
+import { ICourse } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-courses-grid',
@@ -11,7 +11,7 @@ import { ICourses } from '../../shared/interfaces';
 })
 export class CoursesGridComponent implements OnInit {
 
-  @Input() courses: ICourses[] = [];
+  @Input() courses: ICourse[] = [];
 
   constructor(private sorterService: SorterService, public trackbyService: TrackByService) { }
 

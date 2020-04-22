@@ -23,6 +23,11 @@
                 <fa-icon [icon]="['fas', 'list']"></fa-icon> List View
               </a>
             </li>
+            <li class="toolbar-item">
+              <a routerLink="/courses/0/edit">
+                <fa-icon [icon]="['fas', 'plus']"></fa-icon> New Course
+              </a>
+          </li>
           </ul>
           <app-filter-textbox class="navbar-right" (changed)="filterChanged($event)">
           </app-filter-textbox>
@@ -36,5 +41,10 @@
     <app-courses-grid [courses]="filteredCourses" [hidden]="displayMode !== displayModeEnum.Grid">
     </app-courses-grid>
 
+   <!--  <app-pagination
+            [totalItems]="totalRecords" 
+            [pageSize]="pageSize" 
+            (pageChanged)="pageChanged($event)"></app-pagination>
+ -->
   </div>
 </div>

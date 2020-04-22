@@ -20,7 +20,7 @@
               <td>{{ course.title | capitalize }}</td>
               <td>{{ course.duration }} {{ course['duration-unit'] }}</td>
               <td>{{ course.description }}</td>
-              <td><a [routerLink]="['/courses',course.id,'course-details']">View Details</a></td>
+              <td><a [routerLink]="['/courses',course.id,'details']">View Details</a></td>
             </tr>
             <tr *ngIf="!courses.length">
               <td>&nbsp;</td>
