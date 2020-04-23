@@ -11,6 +11,15 @@
         <div class="alert alert-danger" [hidden]="duration.pristine || duration.valid">Duration is required</div>
       </div>
       <div class="form-group">
+        <label>Duration Unit</label>
+        <select class="form-control" 
+                [(ngModel)]="course['duration-unit']"
+                name="durationUnit" 
+                required>
+            <option *ngFor="let dunit of durationUnit | keyvalue" [ngValue]="dunit.value">{{dunit.value}}</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label>Description</label>
         <input type="text" class="form-control" name="description" [(ngModel)]="course.description" #description="ngModel" required>
         <div class="alert alert-danger" [hidden]="description.pristine || description.valid">Description is required</div>

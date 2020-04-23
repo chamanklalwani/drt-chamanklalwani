@@ -18,7 +18,7 @@
                 <fa-icon [icon]="['fas', 'book']"></fa-icon>
               </td>
               <td>{{ course.title | capitalize }}</td>
-              <td>{{ course.duration }} {{ course['duration-unit'] }}</td>
+              <td>{{ course.duration }} {{ durationUnit[course['duration-unit']] }}</td>
               <td>{{ course.description }}</td>
               <td><a [routerLink]="['/courses',course.id,'details']">View Details</a></td>
             </tr>

@@ -5,64 +5,71 @@
       "id": 1,
       "title": "Modern Web Development",
       "duration": 5,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "HTML5, CSS3, ES6/JS and more"
     },
     {
       "id": 2,
       "title": "Git",
       "duration": 3,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Git and GitHub"
     },
     {
       "id": 3,
       "title": "Python",
       "duration": 5,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Intro to Python"
     },
     {
       "id": 4,
       "title": "Java",
       "duration": 5,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Intro to Java"
     },
     {
       "id": 5,
       "title": "Node.js",
       "duration": 5,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Intro to Node.js"
     },
     {
       "id": 6,
       "title": "C++",
       "duration": "35",
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Intro to C++"
     },
     {
       "id": 7,
       "title": "DataBase",
       "duration": 60,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Database for beginners "
     },
     {
       "id": 9,
       "title": "Discrete Mathematics",
       "duration": 90,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Basic of discrete logics"
     },
     {
       "id": 10,
       "title": "Introduction to GO",
       "duration": 80,
-      "duration-unit": "day",
+      "duration-unit": "Days",
       "description": "Basic course for GO language"
+    },
+    {
+      "id": 11,
+      "title": "Cloud Computing",
+      "duration": 2,
+      "duration-unit": "Months",
+      "description": "Intro to AWS and Azure Platform"
     }
   ]
 }

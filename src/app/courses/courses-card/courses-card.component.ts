@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-import { ICourse } from '../../shared/interfaces';
+import { ICourse, DurationUnit } from '../../shared/interfaces';
 import { TrackByService } from '../../core/services/trackby.service';
 
 @Component({
@@ -11,7 +11,9 @@ import { TrackByService } from '../../core/services/trackby.service';
 export class CoursesCardComponent implements OnInit {
 
   @Input() courses: ICourse[] = [];
-
+  // enum variable for Course Duration Units
+  durationUnit = DurationUnit;
+  
   constructor(public trackbyService: TrackByService) { }
 
   ngOnInit() {

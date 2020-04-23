@@ -3,7 +3,7 @@ export interface ICourse {
     id: number;
     title: string;
     duration: number;
-    'duration-unit': string;
+    'duration-unit': DurationUnit;
     description: string;
 }
 
@@ -18,3 +18,10 @@ export interface IApiResponse {
     status: boolean;
     error?: string;
 }
+
+// Enum for Course Duration Unit
+export enum DurationUnit {
+    'Days' = 'Days',
+    'Weeks' = 'Weeks',
+    'Months' = 'Months'
+  }

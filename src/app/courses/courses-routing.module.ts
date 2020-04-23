@@ -13,6 +13,6 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CustomersRoutingModule {
+export class CoursesRoutingModule {
   static components = [CoursesComponent, CoursesCardComponent, CoursesGridComponent];
 }

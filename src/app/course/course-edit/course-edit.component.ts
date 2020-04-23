@@ -7,7 +7,7 @@ import { ModalService, IModalContent } from '../../core/modal/modal.service';
 import { GrowlerService, GrowlerMessageType } from '../../core/growler/growler.service';
 import { LoggerService } from '../../core/services/logger.service';
 
-import { ICourse } from 'src/app/shared/interfaces';
+import { ICourse, DurationUnit } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-course-edit',
@@ -16,14 +16,15 @@ import { ICourse } from 'src/app/shared/interfaces';
 })
 export class CourseEditComponent implements OnInit {
 
-  course: ICourse =
-    {
-      id: 0,
-      title: '',
-      duration: 1,
-      'duration-unit': 'day',
-      description: '',
-    };
+  course: ICourse = {
+    id: 0,
+    title: '',
+    duration: 1,
+    'duration-unit': DurationUnit.Days,
+    description: '',
+  };
+  // enum variable for Course Duration Units
+  durationUnit = DurationUnit;
   errorMessage: string;
   deleteMessageEnabled: boolean;
   operationText = 'Insert';

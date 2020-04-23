@@ -21,7 +21,7 @@
                 <div>{{ course.description }}</div>
                 <div>
                   <span class="font-weight-bold">Duration: </span>
-                  {{ course.duration }} {{ course['duration-unit'] }}
+                  {{ course.duration }} {{ durationUnit[course['duration-unit']] }}
                 </div>
               </div>
             </div>
